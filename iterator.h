@@ -7,35 +7,56 @@ template <typename T>
 class Iterator {
     private:
         Node<T> *current;
+        vector<Node<T>*> nodes;
+        int index;
 
     public:
         Iterator() {
-            // TODO
+            this->current=nullptr;
+            this->index=-1;
         }
 
         Iterator(Node<T> *node) {
-            // TODO
+            complete_vector(node);
         }
 
         Iterator<T> operator=(Iterator<T> other) {          
-            // TODO
+            return (this->current=other->current);
         }
 
         bool operator!=(Iterator<T> other) {
-            // TODO
+            return (this->current!=other->current);
         }
 
         Iterator<T> operator++() {
-            // TODO
+            this->index++;
+            this->current=this->nodes[this->index];
         }
 
         Iterator<T> operator--() {
-            // TODO
+            this->index--;
+            this->current=this->nodes[this->index];
         }
 
         T operator*() {
-            // TODO
+            return (this->current->data);
         }
+        void complete_vector(Node<T>* node){
+            if(node->left!=nullptr){
+                node=node->left;
+                        complete_vector(node);
+            }
+
+            (this->nodes).push_back(node);
+
+            if(t_node->right!=nullptr){
+                node=t_node->right;
+                complete_vector(node);
+            }     
+            this->curret=(this->nodes)[0];
+            this->index++;        
+        }
+
 };
 
 #endif
