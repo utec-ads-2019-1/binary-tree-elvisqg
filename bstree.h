@@ -141,39 +141,43 @@ class BSTree {
         }
 
         void traversePreOrder() {
-            if(root==nullptr)
+            if(this->root==nullptr)
                 cout<<"No elements in this BSTree";
             else
                 print_nodes(1,root);
         }
 
         void traverseInOrder() {
-            if(root==nullptr)
+            if(this->root==nullptr)
                 cout<<"No elements in this BSTree";
             else
                 print_nodes(2,root);
         }
 
         void traversePostOrder() {
-            if(root==nullptr)
+            if(this->root==nullptr)
                 cout<<"No elements in this BSTree";
             else
                 print_nodes(3,root);
         }
 
         Iterator<T> begin() {
-            // TODO
+            if(this->root==nullptr){
+                return Iterator<T> ;
+            else
+                return Iterator<T>(this->root);    
+            }
         }
 
         Iterator<T> end() { 
-            // TODO
+            return Iterator<T>;
         }
 
         void delete_Bstree(Node<T>* t_node){
 
-                if(t_node->left!=nullptr)
+                if(t_node==nullptr)
+                    return;
                 delete_Bstree(t_node->left);
-                if(t_node->right!=nullptr)
                 delete_Bstree(t_node->right);
                 delete t_node;
         }
