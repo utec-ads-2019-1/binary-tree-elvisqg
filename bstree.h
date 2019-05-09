@@ -162,11 +162,10 @@ class BSTree {
         }
 
         Iterator<T> begin() {
-            if(this->root==nullptr){
+            if(this->root==nullptr)
                 return Iterator<T> ;
             else
-                return Iterator<T>(this->root);    
-            }
+                return Iterator<T>(this->root);   
         }
 
         Iterator<T> end() { 
