@@ -44,16 +44,18 @@ class Iterator {
         void complete_vector(Node<T>* node){
             if(node->left!=nullptr){
                 node=node->left;
-                        complete_vector(node);
+                complete_vector(node);
             }
 
             (this->nodes).push_back(node);
 
-            if(t_node->right!=nullptr){
+            // Qué es t_node?
+            /*if(t_node->right!=nullptr){
                 node=t_node->right;
                 complete_vector(node);
             }     
-            this->curret=(this->nodes)[0];
+            // curret no existe, esto no compila
+            this->curret=(this->nodes)[0];*/
             this->index++;        
         }
 

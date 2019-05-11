@@ -92,6 +92,7 @@ class BSTree {
             return BSTree_size;
         }
 
+        // No puedes usar case aquí
         void print_nodes(int case, Node<T>* t_node){
             switch(case){
 
@@ -163,7 +164,7 @@ class BSTree {
 
         Iterator<T> begin() {
             if(this->root==nullptr)
-                return Iterator<T> ;
+                return Iterator<T>;
             else
                 return Iterator<T>(this->root);   
         }
